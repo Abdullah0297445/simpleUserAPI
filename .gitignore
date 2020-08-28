@@ -141,4 +141,4 @@ cython_debug/
 .vscode
 
 #shell scripts
-scripts
+# scripts
