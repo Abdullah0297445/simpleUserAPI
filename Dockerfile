@@ -6,8 +6,15 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir -p /home/simpleUserAPI
 WORKDIR /home/simpleUserAPI
 
+
+RUN apk add --update --no-cache postgresql-client
+RUN apk add --update --no-cache --virtual .tmp-build-deps \
+    gcc libc-dev linux-headers postgresql-dev
+
 COPY requirements.txt .
 RUN pip install -r requirements.txt --no-cache
+
+RUN apk del .tmp-build-deps
 
 COPY . .
 

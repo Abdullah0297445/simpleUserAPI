@@ -7,13 +7,16 @@ cd /home/simpleUserAPI/
 # echo "Collect static files"
 # python manage.py collectstatic --noinput
 
-# Make migrations
-echo "Make migrations"
-python manage.py makemigrations
+# # Wait for DB
+# python manage.py wait_for_db
 
-# Apply database migrations
-echo "Apply database migrations"
-python manage.py migrate
+# # Make migrations
+# echo "Make migrations"
+# python manage.py makemigrations
+
+# # Apply database migrations
+# echo "Apply database migrations"
+# python manage.py migrate
 
 # Start server
 echo "Starting server"
